@@ -28,7 +28,7 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Algoritmo simplex <small>(2 variaveis e 3 restrições)</small></h3>
+                    <h3>Algoritmo simplex <small>({{ $variaveis }} variaveis e {{ $restricoes }} restrições)</small></h3>
                     <br>
                     <form action="#!" autocomplete="off">
                         @csrf
