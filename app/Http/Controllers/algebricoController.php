@@ -8,6 +8,23 @@ class algebricoController extends Controller
 {
     function index(Request $request){
         
+        $regras = [
+            'variavel' => 'required|lte:10|gte:2',
+            'restricao' => 'required|lte:10|gte:1'
+         ];
+
+        $feedback = [
+
+            'required' => 'O campo :attribute é obrigatório',
+            'variavel.gte' => 'O campo :attribute deve ter ao menos 1 variavel!',
+            'variavel.lte' => 'O campo :attribute deve ter no máximo 10 variaveis!',
+            'restricao.gte' => 'O campo :attribute deve ter ao menos 1 restrição!',
+            'restricao.lte' => 'O campo :attribute deve ter no máximo 10 restrições!'
+
+        ];
+
+        $request->validate($regras, $feedback);
+
         $variaveis = $request->input('variavel');
         $restricoes = $request->input('restricao');
 

@@ -53,7 +53,7 @@
                         <label>Restrições</label>
 
                         @for ($j = 0; $j < $restricoes; $j++)
-                            <div class="form-inline" style="padding: 2px;">
+                            <div class="form-inline" style="padding: 10px;">
 
                                 @for ($i = 0; $i < $variaveis; $i++)
                                     
@@ -76,11 +76,12 @@
                                 </select>
                                 <div class="form-group">
                                     <input type="text" class="form-control">
+                                    
                                 </div>
+                                
                             </div>
                         @endfor
-                        
-
+                   
                         <br>
                         <button type="submit" class="btn btn-default">Calcular</button>
                     </form>

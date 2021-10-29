@@ -35,10 +35,12 @@
                         <div class="form-group">
                             <label>Quantidade variáveis de decisão:</label>
                             <input type="number" class="form-control" name="variavel">
+                            {{$errors->has('variavel') ? $errors->first('variavel') : ''}}
                         </div>
                         <div class="form-group">
                             <label>Quantidade restrições:</label>
                             <input type="number" class="form-control" name="restricao">
+                            {{$errors->has('restricao') ? $errors->first('restricao') : ''}}
                         </div>
                         <h5 align='center'>Método</h5>
                         <br>
