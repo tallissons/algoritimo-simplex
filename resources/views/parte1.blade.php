@@ -30,16 +30,21 @@
                 <div class="panel-body">
                     <h3>Algoritmo simplex</h3>
                     <br>
-                    <form action="{{route('parte2')}}" autocomplete="off">
+                    <form method="post" action="{{route('parte2')}}" autocomplete="off">
+                        @csrf
                         <div class="form-group">
                             <label>Quantidade variáveis de decisão:</label>
-                            <input type="number" class="form-control" value="2">
+                            <input type="number" class="form-control" name="variavel">
                         </div>
                         <div class="form-group">
                             <label>Quantidade restrições:</label>
-                            <input type="number" class="form-control" value="3">
+                            <input type="number" class="form-control" name="restricao">
                         </div>
-                        <button type="submit" class="btn btn-default">Próximo</button>
+                        <h5 align='center'>Método</h5>
+                        <br>
+                        
+                        <button type="submit" class="btn btn-default col-auto">Algébrico</button>
+                        <button type="submit" class="btn btn-default col-auto">Geométrico</button>
                     </form>
                 </div>
             </div>

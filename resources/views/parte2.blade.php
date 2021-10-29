@@ -31,23 +31,35 @@
                     <h3>Algoritmo simplex <small>(2 variaveis e 3 restrições)</small></h3>
                     <br>
                     <form action="#!" autocomplete="off">
+                        @csrf
                         <label>Função</label>
                         <div class="form-inline" style="padding: 2px;">
-                            <div class="form-group">
-                                <input class="form-control">
-                                <label>X1 + </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" >
-                                <label>X2</label>
-                            </div>
+                            @for ($i = 0; $i < $variaveis; $i++)
+                                
+                            
+                                    <div class="form-group">
+                                        <input class="form-control">
+                                        <label>X{{ $i+1 }}</label>
+                                        @if ($i != $variaveis-1)
+                                            {{ "+" }}
+                                        @endif
+
+                                    </div>
+                                
+                                
+                            @endfor
                         </div>
+                        
 
                         <br>
                         <label>Restrições</label>
+
+                        
+                        
+
                         <div class="form-inline" style="padding: 2px;">
-                            <div class="form-group">
-                                <input class="form-control">
+                            <div class="form-group ">
+                                <input class="form-control ">
                                 <label>X1 + </label>
                             </div>
                             <div class="form-group">
@@ -64,43 +76,7 @@
                             </div>
                         </div>
 
-                        <div class="form-inline" style="padding: 2px;">
-                            <div class="form-group">
-                                <input class="form-control">
-                                <label>X1 + </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" >
-                                <label>X2</label>
-                            </div>
-                            <select class="form-control" id="sel1">
-                                <option>=</option>
-                                <option><=</option>
-                                <option>>=</option>
-                            </select>
-                            <div class="form-group">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-inline" style="padding: 2px;">
-                            <div class="form-group">
-                                <input class="form-control">
-                                <label>X1 + </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" >
-                                <label>X2</label>
-                            </div>
-                            <select class="form-control" id="sel1">
-                                <option>=</option>
-                                <option><=</option>
-                                <option>>=</option>
-                            </select>
-                            <div class="form-group">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
+                        
 
                         <br>
                         <button type="submit" class="btn btn-default">Calcular</button>

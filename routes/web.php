@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\algebricoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('parte1');
 });
 
 Route::get('/parte1', function () {
     return view('parte1');
 })->name('parte1');
 
-Route::get('/parte2', function () {
-    return view('parte2');
-})->name('parte2');
+Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');
