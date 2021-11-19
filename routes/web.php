@@ -28,7 +28,7 @@ Route::get('/parte1', function () {
 
 Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');
 
-Route::post('/parte3', [algebricoController::class, 'calcular'])->name('parte3');
+Route::post('/parte3', [SimplexController::class, 'simplex'])->name('parte3');
 
 Route::fallback(function () {
 

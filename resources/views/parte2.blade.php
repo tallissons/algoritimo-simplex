@@ -78,6 +78,8 @@
                                     <input name="res{{$j}}valor" type="number" class="form-control">
                                     
                                 </div>
+                                <input name="variavel" value="{{ $variaveis }}" type="hidden">
+                                <input name="restricao" value="{{ $restricoes }}" type="hidden">
                                 
                             </div>
                         @endfor
