@@ -24,6 +24,8 @@ Route::get('/parte1', function () {
 
 Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');
 
+Route::post('/parte3', [algebricoController::class, 'calcular'])->name('parte3');
+
 Route::fallback(function () {
 
     echo 'Anota acessada não existe. <a href= "' . route('parte1') . '">Clique aqui</a> para ir para a página inicial';

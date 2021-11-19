@@ -9,7 +9,7 @@ class algebricoController extends Controller
     function index(Request $request){
         
         $regras = [
-            'variavel' => 'required|lte:10|gte:2',
+            'variavel' => 'required|lte:100000000000|gte:2',
             'restricao' => 'required|lte:10|gte:1'
          ];
 
@@ -30,5 +30,11 @@ class algebricoController extends Controller
 
         
         return view('parte2', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
+    }
+
+    function calcular(Request $request){
+
+        return view('parte3');
+
     }
 }
