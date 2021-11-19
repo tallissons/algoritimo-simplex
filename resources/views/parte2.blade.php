@@ -75,7 +75,7 @@
                                     <option value="{{ 2 }}">>=</option>
                                 </select>
                                 <div class="form-group">
-                                    <input type="text" class="form-control">
+                                    <input name="res{{$j}}valor" type="number" class="form-control">
                                     
                                 </div>
                                 
