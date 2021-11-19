@@ -34,7 +34,8 @@ class algebricoController extends Controller
 
     function calcular(Request $request){
 
-        return view('parte3');
+        dd($request);
+        //return view('parte3');
 
     }
 }

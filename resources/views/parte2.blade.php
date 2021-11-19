@@ -38,7 +38,7 @@
                                 
                             
                                     <div class="form-group">
-                                        <input name="var"  type="number" class="form-control">
+                                        <input name="var{{$i}}"  type="number" class="form-control">
                                         <label>X{{ $i+1 }}</label>
                                         @if ($i != $variaveis-1)
                                             {{ "+" }}
@@ -59,7 +59,7 @@
                                     
                                 
                                         <div class="form-group">
-                                            <input type="number" name="res" class="form-control">
+                                            <input type="number" name="res{{$j}}num{{$i}}" class="form-control">
                                             <label>X{{ $i+1 }}</label>
                                             @if ($i != $variaveis-1)
                                                 {{ "+" }}
@@ -68,11 +68,11 @@
                                         </div>
                                    
                                 @endfor
-                   
-                                <select name="tipo" class="form-control" id="sel1">
-                                    <option value="0">=</option>
-                                    <option value="1"><=</option>
-                                    <option value="2">>=</option>
+                                
+                                <select name="tipo{{$j}}" class="form-control" >
+                                    <option value="{{ 0 }}">=</option>
+                                    <option value="{{ 1 }}"><=</option>
+                                    <option value="{{ 2 }}">>=</option>
                                 </select>
                                 <div class="form-group">
                                     <input type="text" class="form-control">
