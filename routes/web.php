@@ -16,7 +16,7 @@ use App\Http\Controllers\SimplexController;
 |
 */
 
-Route::get('/simplex',[SimplexController::class, 'simplex']);
+Route::post('/simplex',[SimplexController::class, 'simplex'])->name('simplex');
 
 Route::get('/', function () {
     return view('parte1');
