@@ -17,10 +17,11 @@ use App\Http\Controllers\SimplexController;
 */
 
 Route::post('/simplex',[SimplexController::class, 'simplex'])->name('simplex');
+Route::get('/tabela',[SimplexController::class, 'tabela'])->name('tabela');
 
 Route::get('/', function () {
     return view('parte1');
-});
+})->name('inicio');
 
 Route::get('/parte1', function () {
     return view('parte1');
