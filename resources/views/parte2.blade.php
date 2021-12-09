@@ -32,6 +32,13 @@
                     <br>
                     <form method="post" action="{{ route('simplex') }}" autocomplete="off">
                         @csrf
+                        <div style=" width:20%" class="form-group">
+                            <label>Objetivo:</label>
+                            <select name="objetivo" class="form-control" >
+                                <option value="max">Maximizar</option>
+                                <option value="min">Minimizar</option>
+                            </select>
+                        </div>
                         <input type="hidden" name="variavel" value="{{ $variaveis }}">
                         <input type="hidden" name="restricao" value="{{ $restricoes }}">
                         <label>Função</label>
@@ -40,7 +47,7 @@
 
 
                                     <div class="form-group">
-                                        <input name="funcao[]"  type="number" class="form-control">
+                                        <input name="funcao[]"  type="number" step="any" class="form-control">
                                         <label>X{{ $i+1 }}</label>
                                         @if ($i != $variaveis-1)
                                             {{ "+" }}
@@ -61,7 +68,7 @@
 
 
                                         <div class="form-group">
-                                            <input type="number" name="restricao{{$j}}[]" class="form-control">
+                                            <input type="number" step="any" name="restricao{{$j}}[]" class="form-control">
                                             <label>X{{ $i+1 }}</label>
                                             @if ($i != $variaveis-1)
                                                 {{ "+" }}
@@ -77,7 +84,7 @@
                                     <option value="{{ 2 }}">>=</option>
                                 </select>
                                 <div class="form-group">
-                                    <input name="restricao{{$j}}[]" type="number" class="form-control">
+                                    <input name="restricao{{$j}}[]" type="number" step="any" class="form-control">
 
                                 </div>
 

@@ -29,11 +29,22 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
+                    <div>
+                        @if($simplex['objetivo'] == "min")
+                            <p>Minimizar</p>
+                        @else
+                            <p>Maximizar</p>
+                        @endif
+                    </div>
+
                     <div class="funcao">
                         <p>Função:</p>
                         Z
                         @foreach ($simplex['funcao'] as $key => $item)
                             @if($item != 0)
+                                @if ($item >= 0)
+                                    +
+                                @endif
                                 {{$item}}{{$key}}
                             @endif
                         @endforeach

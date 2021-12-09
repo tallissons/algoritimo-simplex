@@ -68,12 +68,33 @@
                                     @endif
                                 @endforeach
                             </tr>
+
+                            @if(!empty($simplex['w']) && $simplex['w']['rw'] != 0)
+                                <tr>
+                                    <td>1</td>
+                                    @foreach ($simplex['w'] as $key => $item)
+                                        @if(isset($simplex["z"]) && $key == "rz")
+                                            <td class="info">{{round($item,4)}}</td>
+                                        @else
+                                            <td>{{round($item,4)}}</td>
+                                        @endif
+                                    @endforeach
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
 
                     <br>
                     @if(isset($simplex["z"]))
-                        <p>A solução ótima é Z = {{round($simplex['z'],4)}}</p>
+                        <p>A solução ótima é Z =
+
+                            @if($simplex["objetivo"] == "max")
+                                {{round($simplex['z'],4)}}
+                            @else
+                                {{--{{round($simplex['z'] * -1,4)}}--}}
+                                {{round($simplex['z'],4)}}
+                            @endif
+                        </p>
                         <a href="{{route('inicio')}}" class="btn btn-default">Novo Problema</a>
                     @else
                         <p>Pivo = {{$simplex[$linha_pivo][$var]}}</p>
