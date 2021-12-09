@@ -46,7 +46,6 @@
                         <br>
 
                         <button type="submit" class="btn btn-default col-auto">Algébrico</button>
-                        <button type="submit" class="btn btn-default col-auto">Geométrico</button>
                     </form>
                 </div>
             </div>
